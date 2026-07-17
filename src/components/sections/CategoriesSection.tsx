@@ -110,7 +110,7 @@ export function CategoriesSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() =>
-                      trackEvent("whatsapp_category_click", {
+                      trackEvent("whatsapp_click", {
                         label: cat.id,
                         category: "whatsapp",
                       })
