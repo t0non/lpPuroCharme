@@ -69,6 +69,7 @@ export function Header() {
       >
         <div className="container">
           <div
+            className="header-inner"
             style={{
               display: "flex",
               alignItems: "center",
@@ -159,7 +160,7 @@ export function Header() {
               aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
-              className="lg:hidden"
+              className="lg:hidden mobile-menu-btn"
               style={{
                 background: "none",
                 border: "none",
@@ -263,6 +264,17 @@ export function Header() {
           </nav>
         </div>
       )}
+
+      <style>{`
+        @media (max-width: 1023px) {
+          .header-inner {
+            justify-content: center !important;
+          }
+          .mobile-menu-btn {
+            display: none !important;
+          }
+        }
+      `}</style>
     </>
   );
 }
