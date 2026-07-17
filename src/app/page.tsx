@@ -4,7 +4,6 @@ import { CategoriesSection } from "@/components/sections/CategoriesSection";
 import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
-import { AboutSection } from "@/components/sections/AboutSection";
 import { LocationSection } from "@/components/sections/LocationSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
@@ -24,7 +23,6 @@ export default function HomePage() {
       <BenefitsSection />
       <HowItWorksSection />
       <TestimonialsSection />
-      <AboutSection />
       <LocationSection />
       <FaqSection />
       <FinalCTASection />
