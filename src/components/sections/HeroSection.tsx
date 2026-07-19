@@ -40,9 +40,8 @@ export function HeroSection() {
         overflow: "hidden",
       }}
     >
-      {/* Video de fundo para Desktop */}
+      {/* Video de fundo */}
       <video
-        className="desktop-only"
         autoPlay
         loop
         muted
@@ -60,27 +59,6 @@ export function HeroSection() {
       >
         <source src="/images/imagem_sessao1.mp4" type="video/mp4" />
       </video>
-
-      {/* Imagem estática de alta qualidade para Mobile */}
-      <div 
-        className="mobile-only"
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: 0,
-        }}
-      >
-        <Image 
-          src="/images/debutantes.jpg"
-          alt="Vestidos Puro Charme"
-          fill
-          priority
-          style={{ objectFit: "cover", objectPosition: "center" }}
-        />
-      </div>
 
       {/* Overlay escuro para garantir leitura do texto */}
       <div
