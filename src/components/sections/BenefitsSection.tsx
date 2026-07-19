@@ -34,13 +34,12 @@ export function BenefitsSection() {
   return (
     <section
       aria-labelledby="benefits-heading"
-      className="section"
+      className="section parallax-bg"
       style={{
         position: "relative",
         backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('/images/centeo.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundAttachment: "fixed",
       }}
     >
       <div className="container" style={{ position: "relative", zIndex: 1 }}>

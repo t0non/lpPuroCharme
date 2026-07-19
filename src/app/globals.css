@@ -585,11 +585,18 @@ a:hover { color: var(--color-rose-mid); }
   display: block !important;
 }
 
+.parallax-bg {
+  background-attachment: scroll; /* fallback default for mobile */
+}
+
 @media (min-width: 768px) {
   .desktop-only {
     display: block !important;
   }
   .mobile-only {
     display: none !important;
+  }
+  .parallax-bg {
+    background-attachment: fixed;
   }
 }
