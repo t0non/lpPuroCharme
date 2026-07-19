@@ -55,7 +55,7 @@ const nextConfig: NextConfig = {
   //     {
   //       source: "/:path*",
   //       has: [{ type: "host", value: "lp-puro-charme-2lqh-ivory.vercel.app" }],
-  //       destination: `${process.env.NEXT_PUBLIC_SITE_URL || "https://purocharme.com.br"}/:path*`,
+  //       destination: `${process.env.NEXT_PUBLIC_SITE_URL || "https://purocharmebh.site"}/:path*`,
   //       permanent: true, // status 308
   //     },
   //   ];

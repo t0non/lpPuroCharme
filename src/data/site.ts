@@ -8,7 +8,7 @@ export const siteConfig = {
   tagline: "Especialistas em fazer você se sentir pronta para o seu momento.",
   description:
     "Aluguel de vestidos para debutantes, damas, daminhas, formandas e madrinhas em Belo Horizonte. Atendimento personalizado no Edifício Mariana, Centro de BH.",
-  url: "https://purocharme.com.br", // ⚠️ Substituir pelo domínio real
+  url: "https://purocharmebh.site", // ⚠️ Substituir pelo domínio real
 
   // ─── CONTATO ──────────────────────────────────────────────────────────────
   contact: {

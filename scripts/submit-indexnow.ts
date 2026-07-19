@@ -7,7 +7,7 @@
  * 1. Gere uma chave em https://www.bing.com/indexnow/getstarted
  * 2. Adicione ao .env.local:
  *    INDEXNOW_KEY=sua-chave-aqui
- *    NEXT_PUBLIC_SITE_URL=https://purocharme.com.br
+ *    NEXT_PUBLIC_SITE_URL=https://purocharmebh.site
  * 3. Crie o arquivo de verificação da chave (ex: public/sua-chave.txt) contendo apenas a chave
  * 4. Execute: npx tsx scripts/submit-indexnow.ts
  *
@@ -21,7 +21,7 @@
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://purocharme.com.br";
+  "https://purocharmebh.site";
 const INDEXNOW_KEY = process.env.INDEXNOW_KEY;
 
 /** URLs públicas e indexáveis do site */
