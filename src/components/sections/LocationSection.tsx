@@ -21,6 +21,7 @@ export function LocationSection() {
 
   return (
     <section
+      id="contato"
       aria-labelledby="location-heading"
       className="section section-alt"
     >

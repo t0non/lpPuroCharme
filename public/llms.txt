@@ -34,23 +34,7 @@ Domingo: fechado
 
 # Páginas principais
 
-- Início: https://purocharmebh.site/
-- Vestidos de debutante: https://purocharmebh.site/vestidos-debutantes
-- Damas e daminhas: https://purocharmebh.site/damas-e-daminhas
-- Vestidos de festa: https://purocharmebh.site/vestidos-de-festa
-- Ternos e pajens: https://purocharmebh.site/ternos-e-pajens
-- Galeria: https://purocharmebh.site/galeria
-- Sobre: https://purocharmebh.site/sobre
-- Contato: https://purocharmebh.site/contato
-- Guias: https://purocharmebh.site/guias
-
-# Guias de conteúdo
-
-- Como escolher o vestido de debutante: https://purocharmebh.site/guias/como-escolher-vestido-debutante
-- Quanto tempo antes procurar o vestido: https://purocharmebh.site/guias/quanto-tempo-antes-alugar-vestido-debutante
-- Como combinar vestidos de damas: https://purocharmebh.site/guias/como-combinar-vestidos-damas-daminhas
-- Alugar ou comprar vestido de festa: https://purocharmebh.site/guias/aluguel-ou-compra-vestido-festa
-- Lojas no Edifício Mariana em BH: https://purocharmebh.site/guias/vestidos-edificio-mariana-bh
+- Início / Landing Page Única: https://purocharmebh.site/
 
 # Sitemap
 

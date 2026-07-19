@@ -27,6 +27,7 @@ export function HowItWorksSection() {
 
   return (
     <section
+      id="como-funciona"
       aria-labelledby="how-it-works-heading"
       style={{
         background:

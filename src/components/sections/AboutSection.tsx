@@ -4,6 +4,7 @@ import { siteConfig } from "@/data/site";
 export function AboutSection() {
   return (
     <section
+      id="sobre"
       aria-labelledby="about-heading"
       className="section"
       style={{ background: "var(--color-cream)" }}

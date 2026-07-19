@@ -8,13 +8,12 @@ import { siteConfig } from "@/data/site";
 import { trackEvent } from "@/lib/analytics";
 
 const navLinks = [
-  { href: "/vestidos-debutantes", label: "Debutantes" },
-  { href: "/damas-e-daminhas", label: "Damas" },
-  { href: "/vestidos-de-festa", label: "Festa" },
-  { href: "/ternos-e-pajens", label: "Ternos" },
-  { href: "/galeria", label: "Galeria" },
-  { href: "/sobre", label: "Sobre" },
-  { href: "/contato", label: "Contato" },
+  { href: "#modelos", label: "Modelos" },
+  { href: "#como-funciona", label: "Como Funciona" },
+  { href: "#galeria", label: "Galeria" },
+  { href: "#sobre", label: "Sobre Nós" },
+  { href: "#depoimentos", label: "Avaliações" },
+  { href: "#contato", label: "Contato" },
 ];
 
 export function Header() {

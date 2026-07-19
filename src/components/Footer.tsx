@@ -4,14 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { ExternalLink, MapPin, Phone, Clock } from "lucide-react";
 import { siteConfig } from "@/data/site";
-import { categories } from "@/data/categories";
-
 const navLinks = [
-  { href: "/", label: "Início" },
-  { href: "/sobre", label: "Sobre nós" },
-  { href: "/galeria", label: "Galeria" },
-  { href: "/contato", label: "Contato" },
-  { href: "/politica-de-privacidade", label: "Política de Privacidade" },
+  { href: "#", label: "Início" },
+  { href: "#modelos", label: "Modelos" },
+  { href: "#galeria", label: "Galeria" },
+  { href: "#sobre", label: "Sobre Nós" },
+  { href: "#depoimentos", label: "Avaliações" },
+  { href: "#contato", label: "Contato & Localização" },
 ];
 
 export function Footer() {
@@ -94,7 +93,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Coluna 2 — Categorias */}
+          {/* Coluna 2 — Menu */}
           <div>
             <h3
               style={{
@@ -107,49 +106,7 @@ export function Footer() {
                 marginBottom: "1rem",
               }}
             >
-              Categorias
-            </h3>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-              {categories.map((cat) => (
-                <li key={cat.id} style={{ marginBottom: "0.5rem" }}>
-                  <Link
-                    href={`/${cat.slug}`}
-                    style={{
-                      color: "rgba(250,247,244,0.75)",
-                      fontSize: "0.9rem",
-                      textDecoration: "none",
-                      transition: "color 150ms ease",
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.color =
-                        "var(--color-rose-light)";
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.color =
-                        "rgba(250,247,244,0.75)";
-                    }}
-                  >
-                    {cat.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Coluna 3 — Links */}
-          <div>
-            <h3
-              style={{
-                fontFamily: "var(--font-sans)",
-                fontSize: "0.8rem",
-                fontWeight: 600,
-                letterSpacing: "0.15em",
-                textTransform: "uppercase",
-                color: "var(--color-gold-light)",
-                marginBottom: "1rem",
-              }}
-            >
-              Menu
+              Navegação
             </h3>
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               {navLinks.map((link) => (
@@ -178,7 +135,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Coluna 4 — Contato */}
+          {/* Coluna 3 — Contato */}
           <div>
             <h3
               style={{
@@ -310,7 +267,7 @@ export function Footer() {
             padding-top: 3.5rem;
           }
           .footer-grid {
-            grid-template-columns: 1.5fr 1fr 1fr 1.5fr !important;
+            grid-template-columns: 2fr 1fr 1.5fr !important;
           }
         }
       `}</style>

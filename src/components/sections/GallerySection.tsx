@@ -30,9 +30,10 @@ export function GallerySection({ limit, showFilter = false }: GallerySectionProp
 
   return (
     <section
+      id="galeria"
       aria-labelledby="gallery-heading"
       className="section"
-      style={{ background: "var(--color-cream)" }}
+      style={{ background: "var(--color-white)" }}
     >
       <div className="container">
         <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>

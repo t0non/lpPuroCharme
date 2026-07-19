@@ -16,6 +16,7 @@ const categoryIcons: Record<string, string> = {
 export function CategoriesSection() {
   return (
     <section
+      id="modelos"
       aria-labelledby="categories-heading"
       className="section"
       style={{ background: "var(--color-cream)" }}

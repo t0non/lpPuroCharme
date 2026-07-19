@@ -134,10 +134,12 @@ export function TestimonialsSection() {
     if (!track) return;
     const card = track.children[current] as HTMLElement;
     if (!card) return;
-    card.scrollIntoView({
+    
+    // Usa scrollTo no container em vez de scrollIntoView para não puxar a página inteira
+    const offsetLeft = card.offsetLeft;
+    track.scrollTo({
+      left: offsetLeft,
       behavior: prefersReduced ? "auto" : "smooth",
-      block: "nearest",
-      inline: "start",
     });
   }, [current, prefersReduced]);
 
@@ -146,6 +148,7 @@ export function TestimonialsSection() {
 
   return (
     <section
+      id="depoimentos"
       aria-labelledby="testimonials-heading"
       className="section section-alt"
     >
