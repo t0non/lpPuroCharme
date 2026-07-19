@@ -127,7 +127,8 @@ export function HeroSection() {
             }}
             aria-label={`${siteConfig.rating.count} avaliações com nota ${siteConfig.rating.score} estrelas no Google`}
           >
-            <div style={{ display: "flex", gap: "2px" }}>
+            <GoogleIcon size={16} />
+            <div style={{ display: "flex", gap: "2px", marginLeft: "2px" }}>
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
@@ -141,12 +142,13 @@ export function HeroSection() {
             <span
               style={{
                 fontFamily: "var(--font-sans)",
-                fontSize: "0.8rem",
+                fontSize: "0.85rem",
                 fontWeight: 500,
                 color: "rgba(250,247,244,0.9)",
+                marginLeft: "2px",
               }}
             >
-              {siteConfig.rating.score} · {siteConfig.rating.count} avaliações no Google
+              {siteConfig.rating.score} · Mais bem avaliado
             </span>
           </div>
 
