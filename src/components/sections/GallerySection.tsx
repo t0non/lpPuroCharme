@@ -38,8 +38,8 @@ export function GallerySection({ limit, showFilter = false }: GallerySectionProp
       <div className="container">
         <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
           <span className="section-label">Galeria</span>
-          <h2 id="gallery-heading" className="section-title">
-            Nossos modelos
+          <h2 id="gallery-heading" className="visually-hidden" style={{ display: 'none' }}>
+            Galeria
           </h2>
           <p
             className="section-subtitle"

@@ -75,21 +75,6 @@ export function AboutSection() {
               realmente entende o que você está vivendo.
             </p>
 
-            {/* Aviso de placeholder */}
-            <div
-              style={{
-                background: "var(--color-blush-light)",
-                border: "1px solid var(--color-blush)",
-                borderRadius: "var(--radius-md)",
-                padding: "1rem",
-                fontSize: "0.8rem",
-                color: "var(--color-rose-taupe)",
-              }}
-            >
-              ⚠️ <strong>Pendência:</strong> Solicite à proprietária um texto
-              institucional com a história da empresa para substituir os
-              parágrafos acima.
-            </div>
 
             {/* Stats */}
             <div
