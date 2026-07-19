@@ -572,3 +572,24 @@ a:hover { color: var(--color-rose-mid); }
   color: var(--color-gold);
   border: 1px solid rgba(184, 149, 106, 0.2);
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVIDADE EXTRA
+═══════════════════════════════════════════════════════════════ */
+
+.desktop-only {
+  display: none !important;
+}
+
+.mobile-only {
+  display: block !important;
+}
+
+@media (min-width: 768px) {
+  .desktop-only {
+    display: block !important;
+  }
+  .mobile-only {
+    display: none !important;
+  }
+}
