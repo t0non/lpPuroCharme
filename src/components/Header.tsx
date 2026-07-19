@@ -268,10 +268,7 @@ export function Header() {
       <style>{`
         @media (max-width: 1023px) {
           .header-inner {
-            justify-content: center !important;
-          }
-          .mobile-menu-btn {
-            display: none !important;
+            justify-content: space-between !important;
           }
         }
       `}</style>

@@ -43,7 +43,6 @@ export function LocationSection() {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr",
-            gap: "2rem",
             alignItems: "stretch",
           }}
           className="location-grid"
@@ -296,8 +295,12 @@ export function LocationSection() {
       </div>
 
       <style>{`
+        .location-grid {
+          gap: 1.25rem;
+        }
         @media (min-width: 768px) {
           .location-grid {
+            gap: 2rem;
             grid-template-columns: 1fr 1fr !important;
           }
         }

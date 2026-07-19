@@ -20,11 +20,10 @@ export function Footer() {
   return (
     <footer
       role="contentinfo"
+      className="footer-container"
       style={{
         background: "var(--color-text-primary)",
         color: "var(--color-text-on-dark)",
-        paddingTop: "3.5rem",
-        paddingBottom: "2rem",
       }}
     >
       <div className="container">
@@ -297,12 +296,19 @@ export function Footer() {
       </div>
 
       <style>{`
+        .footer-container {
+          padding-top: 2.5rem;
+          padding-bottom: 2rem;
+        }
         @media (min-width: 640px) {
           .footer-grid {
             grid-template-columns: repeat(2, 1fr) !important;
           }
         }
         @media (min-width: 1024px) {
+          .footer-container {
+            padding-top: 3.5rem;
+          }
           .footer-grid {
             grid-template-columns: 1.5fr 1fr 1fr 1.5fr !important;
           }

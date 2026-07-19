@@ -97,7 +97,7 @@ export function FinalCTASection({
             gap: "0.625rem",
             background: "#25D366",
             color: "#fff",
-            padding: "1.125rem 2.5rem",
+            padding: "1rem 1.25rem",
             borderRadius: "var(--radius-md)",
             fontSize: "1.05rem",
             fontWeight: 600,

@@ -97,14 +97,13 @@ export function HeroSection() {
       />
 
       <div
-        className="container"
+        className="container hero-content-container"
         style={{
           position: "relative",
           zIndex: 2,
           display: "grid",
           gridTemplateColumns: "1fr",
           gap: "3rem",
-          padding: "4rem 1.25rem",
         }}
       >
         <div
@@ -343,7 +342,13 @@ export function HeroSection() {
       </div>
 
       <style>{`
+        .hero-content-container {
+          padding: 2.5rem 1.25rem;
+        }
         @media (min-width: 768px) {
+          .hero-content-container {
+            padding: 4rem 1.25rem;
+          }
           .hero-info-card {
             display: flex !important;
           }
