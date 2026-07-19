@@ -88,11 +88,10 @@ export const metadata: Metadata = {
   // Web app manifest
   manifest: "/site.webmanifest",
 
-  // Verificação de propriedade — preencher com token real após cadastrar no Search Console
-  // verification: {
-  //   google: "GOOGLE_SEARCH_CONSOLE_VERIFICATION_TOKEN",
-  //   yandex: "YANDEX_VERIFICATION_TOKEN",
-  // },
+  // Verificação de propriedade (Google Search Console)
+  verification: {
+    google: "KKTtqOjNz1yH33r5PWPZCkozYGefTIhLuAIG1aK9WPg",
+  },
 };
 
 import Script from "next/script";
