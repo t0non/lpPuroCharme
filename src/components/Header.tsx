@@ -82,6 +82,7 @@ export function Header() {
               href="/"
               aria-label="Puro Charme – Página inicial"
               style={{ textDecoration: "none", flexShrink: 0 }}
+              className="header-logo"
             >
               <Image
                 src="/images/logo.png"
@@ -96,7 +97,7 @@ export function Header() {
             {/* Navegação desktop */}
             <nav
               aria-label="Navegação principal"
-              style={{ display: "flex", gap: "0.125rem" }}
+              style={{ gap: "0.125rem" }}
               className="hidden lg:flex"
             >
               {navLinks.map((link) => (
@@ -268,7 +269,13 @@ export function Header() {
       <style>{`
         @media (max-width: 1023px) {
           .header-inner {
-            justify-content: space-between !important;
+            justify-content: flex-end !important;
+            position: relative;
+          }
+          .header-logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
           }
         }
       `}</style>
