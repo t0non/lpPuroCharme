@@ -125,6 +125,7 @@ export function FinalCTASection({
             color: "rgba(250,247,244,0.5)",
             fontSize: "0.8rem",
             marginTop: "1.25rem",
+            textAlign: "center",
           }}
         >
           {siteConfig.contact.phone} · Seg–Sex: 9h–18h · Sáb: 9h–13h

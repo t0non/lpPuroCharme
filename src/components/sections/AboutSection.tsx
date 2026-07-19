@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { siteConfig } from "@/data/site";
+import { GoogleIcon } from "@/components/icons/GoogleIcon";
 
 export function AboutSection() {
   return (
@@ -109,26 +110,27 @@ export function AboutSection() {
                 </p>
               </div>
               <div>
+                <div style={{ display: 'flex', alignItems: 'center', height: '2rem' }}>
+                  <GoogleIcon size={28} />
+                </div>
                 <p
                   style={{
-                    fontFamily: "var(--font-serif)",
-                    fontSize: "2rem",
+                    fontSize: "0.85rem",
                     fontWeight: 600,
                     color: "var(--color-rose-taupe)",
-                    margin: 0,
-                    lineHeight: 1,
-                  }}
-                >
-                  {siteConfig.rating.count}+
-                </p>
-                <p
-                  style={{
-                    fontSize: "0.8rem",
-                    color: "var(--color-text-muted)",
                     margin: "0.25rem 0 0",
                   }}
                 >
-                  avaliações
+                  Mais bem avaliado
+                </p>
+                <p
+                  style={{
+                    fontSize: "0.75rem",
+                    color: "var(--color-text-muted)",
+                    margin: "0",
+                  }}
+                >
+                  na região Centro
                 </p>
               </div>
               <div>
