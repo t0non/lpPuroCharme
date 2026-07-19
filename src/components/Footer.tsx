@@ -7,7 +7,6 @@ import { siteConfig } from "@/data/site";
 const navLinks = [
   { href: "#", label: "Início" },
   { href: "#modelos", label: "Modelos" },
-  { href: "#sobre", label: "Sobre Nós" },
   { href: "#depoimentos", label: "Avaliações" },
   { href: "#contato", label: "Contato & Localização" },
 ];
