@@ -78,12 +78,6 @@ export const metadata: Metadata = {
     },
   },
 
-  // Ícones
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-    shortcut: "/favicon.ico",
-  },
 
   // Web app manifest
   manifest: "/site.webmanifest",
