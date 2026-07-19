@@ -12,6 +12,7 @@ export type AnalyticsEvent =
   | "category_view"
   | "gallery_open"
   | "map_click"
+  | "maps_click"
   | "phone_click"
   | "instagram_click"
   | "contact_form_start"

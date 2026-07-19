@@ -1,0 +1,57 @@
+# llms.txt — Puro Charme Debutantes & Damas
+#
+# Este arquivo fornece informações básicas sobre o site para sistemas de
+# inteligência artificial e modelos de linguagem que rastreiam conteúdo web.
+#
+# NOTA TÉCNICA: o arquivo llms.txt NÃO é um fator de ranqueamento no Google
+# e NÃO substitui sitemap.xml, robots.txt, dados estruturados ou conteúdo
+# de qualidade nas páginas. É um recurso opcional que pode ajudar modelos
+# de linguagem a entender melhor o propósito do site.
+
+# Identificação
+
+Nome: Puro Charme Debutantes & Damas
+Tipo: Loja de aluguel de vestidos e trajes para festas
+URL oficial: https://purocharme.com.br
+Localização: Av. Afonso Pena, 526, Sala 916, 9º andar, Edifício Mariana, Centro, Belo Horizonte, MG, Brasil
+Telefone e WhatsApp: +55 31 99715-1194
+
+# Serviços oferecidos
+
+- Aluguel de vestidos de debutante (festa de 15 anos)
+- Vestidos para damas de honra adultas
+- Vestidos para daminhas infantis
+- Vestidos de festa (formaturas, casamentos, eventos sociais)
+- Vestidos para madrinhas e formandas
+- Ternos sociais masculinos
+- Trajes para pajens
+
+# Horários de funcionamento
+
+Segunda a sexta-feira: 09:00 às 18:00
+Sábado: 09:00 às 13:00
+Domingo: fechado
+
+# Páginas principais
+
+- Início: https://purocharme.com.br/
+- Vestidos de debutante: https://purocharme.com.br/vestidos-debutantes
+- Damas e daminhas: https://purocharme.com.br/damas-e-daminhas
+- Vestidos de festa: https://purocharme.com.br/vestidos-de-festa
+- Ternos e pajens: https://purocharme.com.br/ternos-e-pajens
+- Galeria: https://purocharme.com.br/galeria
+- Sobre: https://purocharme.com.br/sobre
+- Contato: https://purocharme.com.br/contato
+- Guias: https://purocharme.com.br/guias
+
+# Guias de conteúdo
+
+- Como escolher o vestido de debutante: https://purocharme.com.br/guias/como-escolher-vestido-debutante
+- Quanto tempo antes procurar o vestido: https://purocharme.com.br/guias/quanto-tempo-antes-alugar-vestido-debutante
+- Como combinar vestidos de damas: https://purocharme.com.br/guias/como-combinar-vestidos-damas-daminhas
+- Alugar ou comprar vestido de festa: https://purocharme.com.br/guias/aluguel-ou-compra-vestido-festa
+- Lojas no Edifício Mariana em BH: https://purocharme.com.br/guias/vestidos-edificio-mariana-bh
+
+# Sitemap
+
+https://purocharme.com.br/sitemap.xml

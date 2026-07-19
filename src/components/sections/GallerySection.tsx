@@ -47,25 +47,9 @@ export function GallerySection({ limit, showFilter = false }: GallerySectionProp
             Conheça alguns dos modelos disponíveis para locação na Puro Charme.
           </p>
 
-          {/* Aviso sobre fotos reais */}
-          <div
-            style={{
-              display: "inline-block",
-              background: "var(--color-blush-light)",
-              border: "1px solid var(--color-blush)",
-              borderRadius: "var(--radius-md)",
-              padding: "0.625rem 1.25rem",
-              fontSize: "0.8rem",
-              color: "var(--color-rose-taupe)",
-              marginBottom: showFilter ? "1.5rem" : 0,
-            }}
-          >
-            📸 Fotos reais dos modelos serão adicionadas em breve. Agende uma
-            visita para conhecer o catálogo completo.
-          </div>
+          {/* Filtro de categorias */}
         </div>
 
-        {/* Filtro de categorias */}
         {showFilter && (
           <div
             role="tablist"

@@ -1,126 +1,124 @@
-import { siteConfig } from "@/data/site";
+/**
+ * src/components/JsonLd.tsx
+ *
+ * Dados estruturados JSON-LD para a página inicial.
+ * Inclui: LocalBusiness (ClothingStore), WebSite e ItemList de categorias.
+ *
+ * REGRAS APLICADAS:
+ * - AggregateRating REMOVIDO: avaliações do Google não devem ser
+ *   transformadas em AggregateRating próprio (risco de política do Google)
+ * - priceRange REMOVIDO: sem confirmação de política de preços com a loja
+ * - paymentAccepted REMOVIDO: sem confirmação de formas de pagamento
+ * - FAQPage REMOVIDO do layout global: deve ser adicionado apenas nas
+ *   páginas onde a seção FAQ é renderizada visualmente
+ * - JSON.stringify com escaping seguro para prevenir injeção via </script>
+ */
+
+import { SITE_URL, SITE_FULL_NAME, SITE_NAME, SITE_DESCRIPTION, CONTACT, ADDRESS, GEO, OPENING_HOURS_SPEC, SEO } from "@/config/siteConfig";
 import { categories } from "@/data/categories";
-import { faqItems } from "@/data/faq";
+
+/** Serializa JSON de forma segura para uso em dangerouslySetInnerHTML */
+function safeJson(obj: unknown): string {
+  return JSON.stringify(obj).replace(/<\/script>/gi, "<\\/script>");
+}
 
 export function JsonLd() {
+  /** Schema LocalBusiness / ClothingStore */
   const localBusiness = {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "ClothingStore"],
-    "@id": `${siteConfig.url}#business`,
-    name: siteConfig.fullName,
-    alternateName: siteConfig.name,
-    description: siteConfig.description,
-    url: siteConfig.url,
-    telephone: siteConfig.contact.phone,
-    image: `${siteConfig.url}/og-image.jpg`,
-    logo: `${siteConfig.url}/logo.png`,
-    priceRange: "$$",
+    // @id consistente — todos os schemas relacionados apontam para este ID
+    "@id": `${SITE_URL}/#business`,
+    name: SITE_FULL_NAME,
+    alternateName: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    telephone: CONTACT.phone,
+    image: `${SITE_URL}${SEO.ogImage}`,
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}${SEO.logo}`,
+      width: 400,
+      height: 100,
+    },
     address: {
       "@type": "PostalAddress",
-      streetAddress: `${siteConfig.address.street}, ${siteConfig.address.complement}`,
-      addressLocality: siteConfig.address.city,
-      addressRegion: siteConfig.address.state,
-      postalCode: siteConfig.address.zip,
-      addressCountry: "BR",
+      streetAddress: `${ADDRESS.streetAddress}, ${ADDRESS.complement}`,
+      addressLocality: ADDRESS.city,
+      addressRegion: ADDRESS.state,
+      postalCode: ADDRESS.postalCode,
+      addressCountry: ADDRESS.country,
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "-19.9166",
-      longitude: "-43.9345",
+      // TODO: confirmar coordenadas exatas com a Puro Charme
+      latitude: GEO.latitude,
+      longitude: GEO.longitude,
     },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "18:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Saturday"],
-        opens: "09:00",
-        closes: "13:00",
-      },
-    ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: siteConfig.rating.score,
-      reviewCount: siteConfig.rating.count,
-      bestRating: "5",
-      worstRating: "1",
-    },
+    openingHoursSpecification: OPENING_HOURS_SPEC,
     sameAs: [
-      siteConfig.contact.instagram,
-      siteConfig.contact.googleProfile,
-    ],
-    hasMap: siteConfig.contact.googleMaps,
+      CONTACT.instagram,
+      CONTACT.googleProfile,
+      // Adicionar Facebook quando URL for confirmada com a loja
+    ].filter(Boolean),
+    hasMap: CONTACT.googleMaps,
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: siteConfig.contact.phone,
+      telephone: CONTACT.phone,
       contactType: "customer service",
       availableLanguage: "Portuguese",
+      contactOption: "TollFree",
     },
-    currenciesAccepted: "BRL",
-    paymentAccepted: "Consulte condições",
     areaServed: {
       "@type": "City",
       name: "Belo Horizonte",
       addressRegion: "MG",
       addressCountry: "BR",
     },
-  };
-
-  const breadcrumbList = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Início",
-        item: siteConfig.url,
-      },
-    ],
-  };
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqItems.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
-    })),
-  };
-
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: siteConfig.fullName,
-    url: siteConfig.url,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${siteConfig.url}/galeria?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
+    // Serviços principais — descrição factual sem inventar dados
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Trajes para Festas e Eventos",
+      itemListElement: [
+        "Aluguel de vestido de debutante",
+        "Vestidos para damas de honra",
+        "Vestidos para daminhas",
+        "Vestidos de festa",
+        "Vestidos para madrinhas",
+        "Vestidos para formandas",
+        "Ternos sociais",
+        "Trajes para pajens",
+      ].map((service, i) => ({
+        "@type": "Offer",
+        position: i + 1,
+        itemOffered: { "@type": "Service", name: service },
+      })),
     },
   };
 
-  // Catalog schema for categories
+  /** Schema WebSite */
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    name: SITE_FULL_NAME,
+    url: SITE_URL,
+    inLanguage: "pt-BR",
+    publisher: {
+      "@id": `${SITE_URL}/#business`,
+    },
+  };
+
+  /** ItemList de categorias de serviço */
   const itemList = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Categorias de Trajes",
+    name: "Categorias de Trajes — Puro Charme",
     itemListElement: categories.map((cat, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: cat.name,
-      url: `${siteConfig.url}/${cat.slug}`,
+      url: `${SITE_URL}/${cat.slug}`,
     })),
   };
 
@@ -128,23 +126,15 @@ export function JsonLd() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
+        dangerouslySetInnerHTML={{ __html: safeJson(localBusiness) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbList) }}
+        dangerouslySetInnerHTML={{ __html: safeJson(websiteSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemList) }}
+        dangerouslySetInnerHTML={{ __html: safeJson(itemList) }}
       />
     </>
   );

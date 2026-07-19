@@ -9,7 +9,7 @@ import { buildWhatsAppMessage } from "@/lib/utm";
 interface FinalCTASectionProps {
   title?: string;
   subtitle?: string;
-  whatsappKey?: keyof typeof siteConfig.whatsappMessages;
+  whatsappKey?: keyof typeof siteConfig.whatsappMessages | string;
 }
 
 export function FinalCTASection({
@@ -28,7 +28,8 @@ export function FinalCTASection({
     });
   };
 
-  const message = buildWhatsAppMessage(siteConfig.whatsappMessages[whatsappKey]);
+  const msgs = siteConfig.whatsappMessages as Record<string, string>;
+  const message = buildWhatsAppMessage(msgs[whatsappKey] ?? msgs.default);
   const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(message)}`;
 
   return (

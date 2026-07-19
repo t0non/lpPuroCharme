@@ -75,6 +75,8 @@ export const siteConfig = {
       "Olá! Gostaria de receber mais informações sobre a locação de trajes na Puro Charme.",
     galeria:
       "Olá! Vi a galeria da Puro Charme e gostaria de agendar uma visita.",
+    guias:
+      "Olá! Li um artigo no site da Puro Charme e gostaria de agendar uma visita.",
   },
 };
 

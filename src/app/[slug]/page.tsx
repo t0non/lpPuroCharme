@@ -7,7 +7,33 @@ import { categories, getCategoryBySlug } from "@/data/categories";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { GallerySection } from "@/components/sections/GallerySection";
-import { siteConfig, getWhatsAppUrl } from "@/data/site";
+import { Breadcrumb } from "@/components/Breadcrumb";
+import { JsonLdService } from "@/components/JsonLdService";
+import { SITE_URL, WHATSAPP_MESSAGES, buildWhatsAppUrl } from "@/config/siteConfig";
+
+// Títulos SEO otimizados por categoria — conforme especificação
+const CATEGORY_META: Record<string, { title: string; description: string }> = {
+  "vestidos-debutantes": {
+    title: "Aluguel de Vestido de Debutante em BH | Puro Charme",
+    description:
+      "Alugue o vestido de debutante ideal em Belo Horizonte. A Puro Charme oferece modelos clássicos e contemporâneos para a festa de 15 anos, com atendimento personalizado no Edifício Mariana, Centro de BH. Agende sua visita.",
+  },
+  "damas-e-daminhas": {
+    title: "Vestidos para Damas e Daminhas em BH | Puro Charme",
+    description:
+      "Vestidos elegantes para damas de honra adultas e daminhas infantis em Belo Horizonte. A Puro Charme cuida da corte completa com harmonia visual. Edifício Mariana, Centro de BH. Agende sua visita.",
+  },
+  "vestidos-de-festa": {
+    title: "Aluguel de Vestidos de Festa em BH | Puro Charme",
+    description:
+      "Aluguel de vestidos de festa em Belo Horizonte para formaturas, casamentos, madrinhas e eventos sociais. Atendimento personalizado no Edifício Mariana, Centro de BH. Agende sua visita.",
+  },
+  "ternos-e-pajens": {
+    title: "Aluguel de Ternos e Trajes para Pajens em BH | Puro Charme",
+    description:
+      "Aluguel de ternos sociais e trajes para pajens em Belo Horizonte. A Puro Charme veste os homens da corte com elegância e qualidade. Edifício Mariana, Centro de BH. Agende sua visita.",
+  },
+};
 
 // Gera as rotas estáticas para todas as categorias
 export async function generateStaticParams() {
@@ -24,15 +50,22 @@ export async function generateMetadata({
   const category = getCategoryBySlug(slug);
   if (!category) return {};
 
+  const meta = CATEGORY_META[slug];
+
   return {
-    title: category.metaTitle,
-    description: category.metaDescription,
-    keywords: category.keywords,
+    title: meta?.title || category.metaTitle,
+    description: meta?.description || category.metaDescription,
     alternates: { canonical: `/${category.slug}` },
     openGraph: {
-      title: category.metaTitle,
-      description: category.metaDescription,
-      url: `${siteConfig.url}/${category.slug}`,
+      title: meta?.title || category.metaTitle,
+      description: meta?.description || category.metaDescription,
+      url: `${SITE_URL}/${category.slug}`,
+      images: [
+        {
+          url: category.heroImage,
+          alt: category.heroImageAlt,
+        },
+      ],
     },
   };
 }
@@ -49,59 +82,32 @@ export default async function CategoryPage({
     notFound();
   }
 
-  const whatsappUrl = getWhatsAppUrl(
-    siteConfig.whatsappMessages[category.whatsappKey as keyof typeof siteConfig.whatsappMessages] ||
-      siteConfig.whatsappMessages.default
-  );
+  const whatsappMessage =
+    WHATSAPP_MESSAGES[category.whatsappKey as keyof typeof WHATSAPP_MESSAGES] ||
+    WHATSAPP_MESSAGES.default;
+  const whatsappUrl = buildWhatsAppUrl(whatsappMessage);
 
   return (
     <>
-      {/* Breadcrumb */}
-      <nav
-        aria-label="Navegação por categorias"
-        style={{
-          background: "var(--color-cream-dark)",
-          borderBottom: "1px solid var(--color-border-subtle)",
-          padding: "0.875rem 0",
-        }}
-      >
-        <div className="container">
-          <ol
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.375rem",
-              listStyle: "none",
-              padding: 0,
-              margin: 0,
-              fontSize: "0.85rem",
-            }}
-          >
-            <li>
-              <Link
-                href="/"
-                style={{ color: "var(--color-text-muted)", textDecoration: "none" }}
-              >
-                Início
-              </Link>
-            </li>
-            <li aria-hidden="true">
-              <ChevronRight size={14} color="var(--color-text-muted)" />
-            </li>
-            <li aria-current="page">
-              <span style={{ color: "var(--color-rose-taupe)", fontWeight: 500 }}>
-                {category.name}
-              </span>
-            </li>
-          </ol>
-        </div>
-      </nav>
+      {/* Breadcrumb com JSON-LD embutido */}
+      <Breadcrumb
+        items={[{ label: category.name, href: `/${category.slug}` }]}
+      />
+
+      {/* JSON-LD Service */}
+      <JsonLdService
+        name={category.name}
+        description={category.description}
+        url={`${SITE_URL}/${category.slug}`}
+        image={category.heroImage}
+      />
 
       {/* Hero da categoria */}
       <section
         aria-labelledby="category-heading"
         style={{
-          background: "linear-gradient(135deg, #2C2118 0%, #4A2D35 60%, #6B3D48 100%)",
+          background:
+            "linear-gradient(135deg, #2C2118 0%, #4A2D35 60%, #6B3D48 100%)",
           padding: "4rem 0",
         }}
       >
@@ -150,8 +156,12 @@ export default async function CategoryPage({
               rel="noopener noreferrer"
               className="btn btn-primary btn-lg"
               style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}
+              data-cta="whatsapp"
+              data-page={category.slug}
+              data-position="hero"
+              data-service={category.id}
             >
-              <MessageCircle size={18} />
+              <MessageCircle size={18} aria-hidden="true" />
               Agendar uma visita
             </a>
           </div>
@@ -208,7 +218,16 @@ export default async function CategoryPage({
                 >
                   O que você encontra aqui
                 </h3>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.625rem" }}>
+                <ul
+                  style={{
+                    listStyle: "none",
+                    padding: 0,
+                    margin: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.625rem",
+                  }}
+                >
                   {category.features.map((feature, i) => (
                     <li
                       key={i}
@@ -242,6 +261,10 @@ export default async function CategoryPage({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary"
+                  data-cta="whatsapp"
+                  data-page={category.slug}
+                  data-position="content"
+                  data-service={category.id}
                 >
                   Falar no WhatsApp
                 </a>
@@ -331,7 +354,7 @@ export default async function CategoryPage({
                         gap: "0.25rem",
                       }}
                     >
-                      Ver modelos <ChevronRight size={14} />
+                      Ver modelos <ChevronRight size={14} aria-hidden="true" />
                     </span>
                   </div>
                 </Link>
@@ -342,7 +365,7 @@ export default async function CategoryPage({
 
       <FaqSection />
       <FinalCTASection
-        whatsappKey={category.whatsappKey as keyof typeof siteConfig.whatsappMessages}
+        whatsappKey={category.whatsappKey}
       />
 
       <style>{`

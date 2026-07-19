@@ -5,60 +5,94 @@ import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { AnalyticsProvider } from "@/components/AnalyticsProvider";
-import { siteConfig } from "@/data/site";
+import {
+  SITE_URL,
+  SITE_FULL_NAME,
+  SITE_NAME,
+  SEO,
+  CONTACT,
+  ADDRESS,
+} from "@/config/siteConfig";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://purocharme.com.br"),
+  // metadataBase define a URL base para resolver URLs relativas em Open Graph, canonical, etc.
+  metadataBase: new URL(SITE_URL),
+
   title: {
-    default: siteConfig.seo.defaultTitle,
-    template: siteConfig.seo.titleTemplate,
+    default: SEO.defaultTitle,
+    template: SEO.titleTemplate,
   },
-  description: siteConfig.seo.defaultDescription,
-  keywords: [
-    "aluguel vestido debutante BH",
-    "vestido 15 anos Belo Horizonte",
-    "aluguel vestido festa BH",
-    "vestido dama BH",
-    "vestido daminha BH",
-    "aluguel terno BH",
-    "traje pajem BH",
-    "Edifício Mariana BH",
-    "loja vestidos centro BH",
-  ],
-  authors: [{ name: "Puro Charme Debutantes & Damas" }],
-  creator: "Puro Charme",
-  publisher: "Puro Charme Debutantes & Damas",
+  description: SEO.defaultDescription,
+
+  applicationName: SITE_FULL_NAME,
+  authors: [{ name: "Equipe Puro Charme" }],
+  creator: SITE_NAME,
+  publisher: SITE_FULL_NAME,
+  category: "Moda e Vestuário",
+
+  // Robots — permitir indexação de todas as páginas públicas
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true },
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
   },
+
+  // Open Graph — compartilhamento em redes sociais e WhatsApp
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    siteName: siteConfig.fullName,
-    title: "Puro Charme – Vestidos e Trajes para Eventos em Belo Horizonte",
-    description:
-      "Aluguel de vestidos para debutantes, damas, daminhas, formandas e madrinhas em Belo Horizonte. Atendimento personalizado no Edifício Mariana, Centro de BH.",
+    siteName: SITE_FULL_NAME,
+    title: SEO.defaultTitle,
+    description: SEO.defaultDescription,
+    url: SITE_URL,
     images: [
       {
-        url: "/og-image.jpg",
+        url: SEO.ogImage,
         width: 1200,
         height: 630,
-        alt: "Puro Charme Debutantes & Damas – Belo Horizonte",
+        alt: `${SITE_FULL_NAME} – Aluguel de Vestidos em Belo Horizonte`,
+        type: "image/jpeg",
       },
     ],
   },
+
+  // Twitter / X Card
   twitter: {
     card: "summary_large_image",
-    title: "Puro Charme – Vestidos e Trajes para Eventos em BH",
-    description:
-      "Aluguel de vestidos para debutantes, damas, formandas e madrinhas. Atendimento personalizado no Edifício Mariana, BH.",
-    images: ["/og-image.jpg"],
+    title: SEO.defaultTitle,
+    description: SEO.defaultDescription,
+    images: [SEO.ogImage],
   },
+
+  // Alternates e canonical
   alternates: {
     canonical: "/",
+    languages: {
+      "pt-BR": "/",
+    },
   },
+
+  // Ícones
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+    shortcut: "/favicon.ico",
+  },
+
+  // Web app manifest
+  manifest: "/site.webmanifest",
+
+  // Verificação de propriedade — preencher com token real após cadastrar no Search Console
+  // verification: {
+  //   google: "GOOGLE_SEARCH_CONSOLE_VERIFICATION_TOKEN",
+  //   yandex: "YANDEX_VERIFICATION_TOKEN",
+  // },
 };
 
 export default function RootLayout({
@@ -69,14 +103,26 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
+        {/* Link de acessibilidade — permite pular direto para o conteúdo principal */}
         <a href="#main-content" className="skip-link">
           Ir para o conteúdo principal
         </a>
+
+        {/* Scripts de analytics — carregados apenas se variáveis de ambiente estiverem configuradas */}
         <AnalyticsProvider />
+
+        {/* Dados estruturados JSON-LD — presentes em todas as páginas */}
         <JsonLd />
+
         <Header />
-        <main id="main-content">{children}</main>
+
+        <main id="main-content" tabIndex={-1}>
+          {children}
+        </main>
+
         <Footer />
+
+        {/* Botão flutuante do WhatsApp */}
         <WhatsAppFloatingButton />
       </body>
     </html>
