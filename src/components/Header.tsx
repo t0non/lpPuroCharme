@@ -10,7 +10,6 @@ import { trackEvent } from "@/lib/analytics";
 const navLinks = [
   { href: "#modelos", label: "Modelos" },
   { href: "#como-funciona", label: "Como Funciona" },
-  { href: "#galeria", label: "Galeria" },
   { href: "#sobre", label: "Sobre Nós" },
   { href: "#depoimentos", label: "Avaliações" },
   { href: "#contato", label: "Contato" },

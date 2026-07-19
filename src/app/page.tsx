@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { CategoriesSection } from "@/components/sections/CategoriesSection";
-import { GallerySection } from "@/components/sections/GallerySection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
@@ -39,7 +38,6 @@ export default function HomePage() {
     <>
       <HeroSection />
       <CategoriesSection />
-      <GallerySection limit={6} />
       <HowItWorksSection />
       <AboutSection />
       <BenefitsSection />
