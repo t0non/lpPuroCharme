@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { siteConfig } from "@/data/site";
+import { trackEvent } from "@/lib/analytics";
 
 const services = [
   {
@@ -127,10 +128,12 @@ export function ServicesSection() {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-outline"
+                    className="btn btn-primary"
                     style={{ marginTop: "1rem", width: "100%", justifyContent: "center" }}
+                    onClick={() => trackEvent("whatsapp_click", { label: service.id, category: "services" })}
                   >
-                    Saber mais
+                    <Image src="/images/whatsapp-icone.png" alt="WhatsApp" width={18} height={18} style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }} />
+                    Ver modelos
                   </a>
                 </div>
               </div>
