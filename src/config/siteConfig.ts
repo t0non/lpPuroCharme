@@ -21,7 +21,7 @@ export const SITE_FULL_NAME = "Puro Charme Debutantes & Damas";
 export const SITE_TAGLINE =
   "Especialistas em fazer você se sentir pronta para o seu momento.";
 export const SITE_DESCRIPTION =
-  "Aluguel de vestidos para debutantes e damas em Belo Horizonte. Confecção sob medida e primeiro aluguel. Atendimento personalizado no Edifício Mariana, Centro de BH.";
+  "Aluguel de vestidos para debutantes e damas, além de ternos elegantes em Belo Horizonte. Atendimento personalizado no Edifício Mariana, Centro de BH.";
 
 // ─── CONTATO ─────────────────────────────────────────────────────────────────
 
@@ -109,7 +109,7 @@ export const SEO = {
     "Puro Charme Debutantes & Damas | Aluguel de Vestidos em BH",
   /** Descrição padrão */
   defaultDescription:
-    "Aluguel de vestidos para debutantes e damas em Belo Horizonte. Confecção sob medida e primeiro aluguel.",
+    "Aluguel de vestidos para debutantes e damas, e ternos elegantes em Belo Horizonte.",
   /** Imagem Open Graph padrão */
   ogImage: "/og-image.jpg",
   /** Logotipo para schema */
@@ -122,8 +122,8 @@ export const SEO = {
 export const WHATSAPP_MESSAGES = {
   default:
     "Olá! Conheci a Puro Charme Debutantes & Damas pelo site e gostaria de agendar uma visita.",
-  primeiroAluguel:
-    "Olá! Gostaria de saber mais sobre a confecção sob medida e o primeiro aluguel para debutantes e damas.",
+  ternos:
+    "Olá! Gostaria de conhecer os ternos disponíveis para aluguel e agendar uma visita.",
   modelos:
     "Olá! Gostaria de conhecer os modelos disponíveis para aluguel.",
   debutantes:

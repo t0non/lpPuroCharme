@@ -5,29 +5,28 @@ import { siteConfig } from "@/data/site";
 
 const services = [
   {
-    id: "aluguel",
-    title: "Aluguel de vestidos",
-    description: "Modelos selecionados para debutantes, damas e ocasiões especiais.",
+    id: "debutantes",
+    title: "Vestidos de Debutante",
+    description: "Modelos exclusivos, do clássico ao contemporâneo, para os 15 anos dos seus sonhos.",
     image: "/images/debutantes.jpg",
     alt: "Vestidos de debutante",
-    whatsappMsg: siteConfig.whatsappMessages.modelos,
+    whatsappMsg: siteConfig.whatsappMessages.debutantes,
   },
   {
-    id: "confeccao",
-    title: "Confecção sob medida",
-    description: "Vestidos exclusivos para debutantes e damas, desenvolvidos de acordo com as medidas, preferências e características de cada cliente.",
+    id: "damas",
+    title: "Damas de Honra",
+    description: "Opções elegantes e coordenadas para damas de honra, completando a harmonia visual da corte.",
     image: "/images/Daminhas.jpg",
-    alt: "Vestidos sob medida",
-    highlight: "Disponível para primeiro aluguel",
-    whatsappMsg: siteConfig.whatsappMessages.primeiroAluguel,
+    alt: "Vestidos para damas",
+    whatsappMsg: siteConfig.whatsappMessages.damas,
   },
   {
-    id: "atendimento",
-    title: "Atendimento especializado",
-    description: "Um atendimento próximo para ajudar cada cliente a encontrar o modelo, o caimento e os detalhes ideais para o seu momento.",
-    image: "/images/vestidos_festas.jpg", // can reuse this nice image or whatsapp image
-    alt: "Atendimento especializado",
-    whatsappMsg: siteConfig.whatsappMessages.contato,
+    id: "ternos",
+    title: "Ternos",
+    description: "Ternos sociais com modelagem impecável para acompanhar o evento com máxima elegância.",
+    image: "/images/ternos_pagen.jpg",
+    alt: "Ternos elegantes",
+    whatsappMsg: siteConfig.whatsappMessages.ternos,
   },
 ];
 

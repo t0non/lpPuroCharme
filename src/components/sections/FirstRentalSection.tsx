@@ -6,12 +6,12 @@ import { trackEvent } from "@/lib/analytics";
 
 export function FirstRentalSection() {
   const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(
-    siteConfig.whatsappMessages.primeiroAluguel
+    siteConfig.whatsappMessages.ternos
   )}`;
 
   const handleCTA = () => {
     trackEvent("whatsapp_click", {
-      label: "first_rental",
+      label: "ternos",
       category: "conversion",
     });
   };
@@ -48,9 +48,9 @@ export function FirstRentalSection() {
         >
           {/* Texto */}
           <div style={{ order: 2 }}>
-            <span className="section-label">Primeiro Aluguel</span>
+            <span className="section-label">Ternos</span>
             <h2 id="first-rental-heading" className="section-title">
-              Um vestido criado especialmente para você
+              Elegância também para os homens da corte
             </h2>
             <div
               style={{
@@ -64,10 +64,10 @@ export function FirstRentalSection() {
               }}
             >
               <p>
-                Na modalidade primeiro aluguel, o vestido é confeccionado sob medida para a debutante ou dama, considerando suas medidas, preferências e os detalhes escolhidos para o evento. 
+                Oferecemos opções elegantes de ternos e trajes a rigor para que a corte esteja em perfeita harmonia com a protagonista do evento.
               </p>
               <p>
-                Assim, a cliente estreia um modelo exclusivo, desenvolvido especialmente para que o seu momento seja verdadeiramente inesquecível e com caimento impecável.
+                Nosso atendimento garante o melhor caimento e estilo, para que o momento seja verdadeiramente impecável.
               </p>
             </div>
 
@@ -79,7 +79,7 @@ export function FirstRentalSection() {
               onClick={handleCTA}
             >
               <Image src="/images/whatsapp-icone.png" alt="WhatsApp" width={18} height={18} style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }} />
-              Quero saber sobre o primeiro aluguel
+              Quero conhecer os ternos
             </a>
           </div>
 
@@ -108,8 +108,8 @@ export function FirstRentalSection() {
               }}
             >
               <Image
-                src="/images/Daminhas.jpg"
-                alt="Confecção sob medida para primeiro aluguel"
+                src="/images/ternos_pagen.jpg"
+                alt="Ternos e trajes elegantes"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: "cover", objectPosition: "center" }}

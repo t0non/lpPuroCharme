@@ -187,7 +187,7 @@ export function HeroSection() {
               maxWidth: "560px",
             }}
           >
-            Aluguel de vestidos para debutantes e damas. Também confeccionamos vestidos sob medida para debutantes e damas na modalidade primeiro aluguel.
+            Aluguel de vestidos para debutantes e damas. Também contamos com opções de ternos elegantes para acompanhar a sua corte.
           </p>
 
           {/* CTAs */}
@@ -235,7 +235,7 @@ export function HeroSection() {
               "Debutantes",
               "Damas",
               "Confecção sob medida",
-              "Primeiro Aluguel",
+              "Ternos",
             ].map((item) => (
               <span
                 key={item}

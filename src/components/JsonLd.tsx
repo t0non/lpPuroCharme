@@ -82,7 +82,7 @@ export function JsonLd() {
         "Aluguel de vestido de debutante",
         "Vestidos para damas de honra",
         "Confecção de vestido sob medida",
-        "Primeiro aluguel de vestido",
+        "Aluguel de ternos",
       ].map((service, i) => ({
         "@type": "Offer",
         position: i + 1,

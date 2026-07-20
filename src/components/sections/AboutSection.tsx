@@ -60,9 +60,7 @@ export function AboutSection() {
             </p>
 
             <p style={{ fontSize: "1rem", lineHeight: 1.8, color: "var(--color-text-secondary)" }}>
-              Também confeccionamos vestidos sob medida para debutantes e damas na
-              modalidade primeiro aluguel, criando modelos pensados para as
-              medidas, preferências e características de cada cliente.
+              Também contamos com opções elegantes de ternos, garantindo que toda a corte esteja impecável e harmônica para o grande dia.
             </p>
 
             <p style={{ fontSize: "1rem", lineHeight: 1.8, color: "var(--color-text-secondary)" }}>
