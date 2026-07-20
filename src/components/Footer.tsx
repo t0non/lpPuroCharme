@@ -39,12 +39,16 @@ export function Footer() {
             <div style={{ marginBottom: "1.25rem", filter: "brightness(0) invert(1)" }}>
               <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "0.75rem" }}>
                 <Image
-                  src="/images/logo.png"
-                  alt="Logo Puro Charme"
-                  width={200}
-                  height={60}
-                  style={{ objectFit: "contain", maxHeight: "60px", width: "auto" }}
+                  src="/icon.png"
+                  alt="Ícone Puro Charme"
+                  width={40}
+                  height={40}
+                  style={{ objectFit: "contain" }}
                 />
+                <span style={{ fontFamily: "var(--font-serif)", fontSize: "1.1rem", fontWeight: 600, color: "var(--color-cream)", lineHeight: 1.2 }}>
+                  Puro Charme<br/>
+                  <span style={{ fontSize: "0.8rem", color: "rgba(250,247,244,0.7)", fontWeight: 500, fontFamily: "var(--font-sans)" }}>Debutantes & Damas</span>
+                </span>
               </Link>
             </div>
             <p
