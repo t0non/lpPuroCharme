@@ -53,27 +53,22 @@ export function AboutSection() {
             </div>
 
             <p style={{ fontSize: "1rem", lineHeight: 1.8, color: "var(--color-text-secondary)" }}>
-              A Puro Charme nasceu no coração de Belo Horizonte com um propósito
-              claro: ser a loja onde cada cliente encontra não apenas um vestido,
-              mas orientação, cuidado e atenção para um dos momentos mais
-              especiais da sua vida.
+              A Puro Charme Debutantes & Damas é uma loja especializada no aluguel
+              de vestidos para celebrações especiais. Atendemos debutantes,
+              damas e clientes que procuram o modelo ideal para o seu evento
+              no coração de Belo Horizonte.
             </p>
 
             <p style={{ fontSize: "1rem", lineHeight: 1.8, color: "var(--color-text-secondary)" }}>
-              Estamos localizadas no{" "}
-              <strong style={{ color: "var(--color-text-primary)" }}>
-                Edifício Mariana
-              </strong>
-              , na Avenida Afonso Pena — o polo de moda festa e nupcial mais
-              tradicional da cidade — e atendemos debutantes, damas, daminhas,
-              formandas, madrinhas, pajens e todos que precisam de um traje
-              especial para eventos importantes.
+              Também confeccionamos vestidos sob medida para debutantes e damas na
+              modalidade primeiro aluguel, criando modelos pensados para as
+              medidas, preferências e características de cada cliente.
             </p>
 
             <p style={{ fontSize: "1rem", lineHeight: 1.8, color: "var(--color-text-secondary)" }}>
-              Nosso atendimento é presencial e personalizado. Porque acreditamos
-              que escolher o traje certo exige tempo, atenção e uma equipe que
-              realmente entende o que você está vivendo.
+              Nosso atendimento é próximo e especializado, ajudando cada pessoa
+              a se sentir segura, elegante e pronta para viver um momento
+              inesquecível.
             </p>
 
 

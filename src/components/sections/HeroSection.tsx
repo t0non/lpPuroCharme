@@ -166,14 +166,14 @@ export function HeroSection() {
               letterSpacing: "-0.01em",
             }}
           >
-            Você merece chegar ao seu evento{" "}
+            O traje perfeito para um{" "}
             <em
               style={{
                 fontStyle: "italic",
                 color: "var(--color-rose-light)",
               }}
             >
-              exatamente como imaginou.
+              momento inesquecível.
             </em>
           </h1>
 
@@ -187,9 +187,7 @@ export function HeroSection() {
               maxWidth: "560px",
             }}
           >
-            Do vestido de 15 anos ao traje do pajem — atendimento especializado
-            para você e toda a corte, no Edifício Mariana, Centro de Belo
-            Horizonte.
+            Aluguel de vestidos para debutantes e damas. Também confeccionamos vestidos sob medida para debutantes e damas na modalidade primeiro aluguel.
           </p>
 
           {/* CTAs */}
@@ -213,7 +211,7 @@ export function HeroSection() {
               Agendar uma visita
             </a>
             <Link
-              href="/galeria"
+              href="#servicos"
               className="btn btn-ghost w-full-mobile"
               onClick={handleSecondaryCTA}
               id="hero-cta-secondary"
@@ -235,9 +233,9 @@ export function HeroSection() {
           >
             {[
               "Debutantes",
-              "Damas & Daminhas",
-              "Festas",
-              "Ternos & Pajens",
+              "Damas",
+              "Confecção sob medida",
+              "Primeiro Aluguel",
             ].map((item) => (
               <span
                 key={item}

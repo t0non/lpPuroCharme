@@ -21,7 +21,7 @@ export const SITE_FULL_NAME = "Puro Charme Debutantes & Damas";
 export const SITE_TAGLINE =
   "Especialistas em fazer você se sentir pronta para o seu momento.";
 export const SITE_DESCRIPTION =
-  "Aluguel de vestidos para debutantes, damas, daminhas, formandas e madrinhas em Belo Horizonte. Atendimento personalizado no Edifício Mariana, Centro de BH.";
+  "Aluguel de vestidos para debutantes e damas em Belo Horizonte. Confecção sob medida e primeiro aluguel. Atendimento personalizado no Edifício Mariana, Centro de BH.";
 
 // ─── CONTATO ─────────────────────────────────────────────────────────────────
 
@@ -106,10 +106,10 @@ export const SEO = {
   titleTemplate: "%s | Puro Charme",
   /** Título padrão da página inicial */
   defaultTitle:
-    "Aluguel de Vestidos para Debutantes e Festas em BH | Puro Charme",
+    "Puro Charme Debutantes & Damas | Aluguel de Vestidos em BH",
   /** Descrição padrão */
   defaultDescription:
-    "Aluguel de vestidos de debutante, damas, daminhas, formandas e madrinhas em Belo Horizonte. Atendimento personalizado no Edifício Mariana, Centro de BH. Agende sua visita.",
+    "Aluguel de vestidos para debutantes e damas em Belo Horizonte. Confecção sob medida e primeiro aluguel.",
   /** Imagem Open Graph padrão */
   ogImage: "/og-image.jpg",
   /** Logotipo para schema */
@@ -121,21 +121,17 @@ export const SEO = {
 
 export const WHATSAPP_MESSAGES = {
   default:
-    "Olá! Encontrei a Puro Charme pelo site e gostaria de agendar uma visita para conhecer os modelos.",
+    "Olá! Conheci a Puro Charme Debutantes & Damas pelo site e gostaria de agendar uma visita.",
+  primeiroAluguel:
+    "Olá! Gostaria de saber mais sobre a confecção sob medida e o primeiro aluguel para debutantes e damas.",
+  modelos:
+    "Olá! Gostaria de conhecer os modelos disponíveis para aluguel.",
   debutantes:
     "Olá! Encontrei a Puro Charme pelo site e gostaria de agendar uma visita para conhecer os vestidos de debutante.",
   damas:
-    "Olá! Encontrei a Puro Charme pelo site e gostaria de conhecer opções para damas ou daminhas.",
-  festa:
-    "Olá! Encontrei a Puro Charme pelo site e gostaria de conhecer os vestidos de festa.",
-  ternos:
-    "Olá! Encontrei a Puro Charme pelo site e gostaria de conhecer os ternos e trajes para pajens.",
+    "Olá! Encontrei a Puro Charme pelo site e gostaria de conhecer opções para damas.",
   contato:
     "Olá! Encontrei a Puro Charme pelo site e gostaria de receber mais informações sobre os serviços.",
-  galeria:
-    "Olá! Vi a galeria da Puro Charme no site e gostaria de agendar uma visita.",
-  guias:
-    "Olá! Li um artigo no site da Puro Charme e gostaria de agendar uma visita.",
 } as const;
 
 export type WhatsAppKey = keyof typeof WHATSAPP_MESSAGES;

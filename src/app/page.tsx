@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { CategoriesSection } from "@/components/sections/CategoriesSection";
+import { ServicesSection } from "@/components/sections/ServicesSection";
+import { FirstRentalSection } from "@/components/sections/FirstRentalSection";
+import { AboutSection } from "@/components/sections/AboutSection";
 import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
@@ -10,16 +12,16 @@ import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { SITE_URL, SEO } from "@/config/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Aluguel de Vestidos para Debutantes e Festas em BH | Puro Charme",
+  title: "Puro Charme Debutantes & Damas | Aluguel de Vestidos em BH",
   description:
-    "Aluguel de vestidos de debutante, damas, daminhas, formandas e madrinhas em Belo Horizonte. Atendimento personalizado no Edifício Mariana, Centro de BH. Agende sua visita.",
+    "Aluguel de vestidos para debutantes e damas em Belo Horizonte. Confecção sob medida e primeiro aluguel. Atendimento personalizado no Edifício Mariana, Centro de BH. Agende sua visita.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Aluguel de Vestidos para Debutantes e Festas em BH | Puro Charme",
+    title: "Puro Charme Debutantes & Damas | Aluguel de Vestidos em BH",
     description:
-      "Aluguel de vestidos de debutante, damas, daminhas, formandas e madrinhas em Belo Horizonte. Atendimento personalizado no Edifício Mariana, Centro de BH.",
+      "Aluguel de vestidos para debutantes e damas em Belo Horizonte. Confecção sob medida e primeiro aluguel. Atendimento personalizado no Edifício Mariana, Centro de BH.",
     url: SITE_URL,
     images: [
       {
@@ -36,7 +38,9 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <CategoriesSection />
+      <ServicesSection />
+      <FirstRentalSection />
+      <AboutSection />
       <HowItWorksSection />
       <BenefitsSection />
       <TestimonialsSection />

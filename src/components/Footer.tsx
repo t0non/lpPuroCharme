@@ -6,7 +6,7 @@ import { ExternalLink, MapPin, Phone, Clock } from "lucide-react";
 import { siteConfig } from "@/data/site";
 const navLinks = [
   { href: "#", label: "Início" },
-  { href: "#modelos", label: "Modelos" },
+  { href: "#servicos", label: "Modelos & Serviços" },
   { href: "#depoimentos", label: "Avaliações" },
   { href: "#contato", label: "Contato & Localização" },
 ];
@@ -37,14 +37,18 @@ export function Footer() {
           {/* Coluna 1 — Marca */}
           <div>
             <div style={{ marginBottom: "1.25rem", filter: "brightness(0) invert(1)" }}>
-              <Link href="/">
+              <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "0.75rem" }}>
                 <Image
                   src="/images/logo.png"
-                  alt="Puro Charme Debutantes & Damas"
-                  width={220}
-                  height={60}
-                  style={{ objectFit: "contain", maxHeight: "60px", width: "auto" }}
+                  alt="Logo Puro Charme"
+                  width={140}
+                  height={40}
+                  style={{ objectFit: "contain", maxHeight: "40px", width: "auto" }}
                 />
+                <span style={{ fontFamily: "var(--font-serif)", fontSize: "1.1rem", fontWeight: 600, color: "var(--color-cream)", lineHeight: 1.2 }}>
+                  Puro Charme<br/>
+                  <span style={{ fontSize: "0.8rem", color: "rgba(250,247,244,0.7)", fontWeight: 500, fontFamily: "var(--font-sans)" }}>Debutantes & Damas</span>
+                </span>
               </Link>
             </div>
             <p
@@ -55,7 +59,7 @@ export function Footer() {
                 maxWidth: "280px",
               }}
             >
-              {siteConfig.tagline}
+              Aluguel de vestidos para debutantes e damas, confecção sob medida e primeiro aluguel para momentos inesquecíveis.
             </p>
             <div
               style={{ display: "flex", gap: "0.75rem", marginTop: "1.25rem" }}

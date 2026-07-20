@@ -50,9 +50,14 @@ export default function NotFoundPage() {
           <Link href="/" className="btn btn-primary">
             Voltar ao início
           </Link>
-          <Link href="/contato" className="btn btn-secondary">
+          <a
+            href="https://wa.me/5531997151194?text=Ol%C3%A1!%20Conheci%20a%20Puro%20Charme%20Debutantes%20%26%20Damas%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20visita."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-secondary"
+          >
             Entrar em contato
-          </Link>
+          </a>
         </div>
       </div>
     </section>

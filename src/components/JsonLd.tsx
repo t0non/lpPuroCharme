@@ -15,7 +15,6 @@
  */
 
 import { SITE_URL, SITE_FULL_NAME, SITE_NAME, SITE_DESCRIPTION, CONTACT, ADDRESS, GEO, OPENING_HOURS_SPEC, SEO } from "@/config/siteConfig";
-import { categories } from "@/data/categories";
 
 /** Serializa JSON de forma segura para uso em dangerouslySetInnerHTML */
 function safeJson(obj: unknown): string {
@@ -82,12 +81,8 @@ export function JsonLd() {
       itemListElement: [
         "Aluguel de vestido de debutante",
         "Vestidos para damas de honra",
-        "Vestidos para daminhas",
-        "Vestidos de festa",
-        "Vestidos para madrinhas",
-        "Vestidos para formandas",
-        "Ternos sociais",
-        "Trajes para pajens",
+        "Confecção de vestido sob medida",
+        "Primeiro aluguel de vestido",
       ].map((service, i) => ({
         "@type": "Offer",
         position: i + 1,
@@ -113,12 +108,16 @@ export function JsonLd() {
   const itemList = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Categorias de Trajes — Puro Charme",
-    itemListElement: categories.map((cat, index) => ({
+    name: "Serviços — Puro Charme",
+    itemListElement: [
+      { name: "Aluguel de vestidos", url: `${SITE_URL}/#servicos` },
+      { name: "Confecção sob medida", url: `${SITE_URL}/#servicos` },
+      { name: "Atendimento especializado", url: `${SITE_URL}/#servicos` },
+    ].map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      name: cat.name,
-      url: `${SITE_URL}/${cat.slug}`,
+      name: item.name,
+      url: item.url,
     })),
   };
 

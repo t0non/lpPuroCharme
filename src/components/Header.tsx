@@ -8,7 +8,7 @@ import { siteConfig } from "@/data/site";
 import { trackEvent } from "@/lib/analytics";
 
 const navLinks = [
-  { href: "#modelos", label: "Modelos" },
+  { href: "#servicos", label: "Modelos & Serviços" },
   { href: "#como-funciona", label: "Como Funciona" },
   { href: "#depoimentos", label: "Avaliações" },
   { href: "#contato", label: "Contato" },
@@ -77,18 +77,22 @@ export function Header() {
             {/* Logo */}
             <Link
               href="/"
-              aria-label="Puro Charme – Página inicial"
-              style={{ textDecoration: "none", flexShrink: 0 }}
+              aria-label="Puro Charme Debutantes & Damas – Página inicial"
+              style={{ textDecoration: "none", flexShrink: 0, display: "flex", alignItems: "center", gap: "0.75rem" }}
               className="header-logo"
             >
               <Image
                 src="/images/logo.png"
-                alt="Puro Charme Debutantes & Damas"
-                width={200}
-                height={50}
-                style={{ objectFit: "contain", maxHeight: "50px", width: "auto" }}
+                alt="Logo Puro Charme"
+                width={140}
+                height={40}
+                style={{ objectFit: "contain", maxHeight: "40px", width: "auto" }}
                 priority
               />
+              <span className="hidden lg:block" style={{ fontFamily: "var(--font-serif)", fontSize: "1.1rem", fontWeight: 600, color: "var(--color-rose-taupe)", lineHeight: 1.2 }}>
+                Puro Charme<br/>
+                <span style={{ fontSize: "0.8rem", color: "var(--color-text-secondary)", fontWeight: 500, fontFamily: "var(--font-sans)" }}>Debutantes & Damas</span>
+              </span>
             </Link>
 
             {/* Navegação desktop */}
