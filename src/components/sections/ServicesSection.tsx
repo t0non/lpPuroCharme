@@ -88,26 +88,7 @@ export function ServicesSection() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: "cover", objectPosition: "top center" }}
                   />
-                  {service.highlight && (
-                    <div
-                      style={{
-                        position: "absolute",
-                        bottom: "1rem",
-                        left: "1rem",
-                        background: "var(--color-gold)",
-                        color: "white",
-                        padding: "0.25rem 0.75rem",
-                        borderRadius: "999px",
-                        fontSize: "0.75rem",
-                        fontWeight: 600,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.05em",
-                        boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
-                      }}
-                    >
-                      {service.highlight}
-                    </div>
-                  )}
+                  
                 </div>
 
                 {/* Conteúdo */}
