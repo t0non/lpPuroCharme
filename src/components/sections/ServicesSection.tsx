@@ -133,7 +133,7 @@ export function ServicesSection() {
                     onClick={() => trackEvent("whatsapp_click", { label: service.id, category: "services" })}
                   >
                     <Image src="/images/whatsapp-icone.png" alt="WhatsApp" width={18} height={18} style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }} />
-                    Ver modelos
+                    Falar no WhatsApp
                   </a>
                 </div>
               </div>
