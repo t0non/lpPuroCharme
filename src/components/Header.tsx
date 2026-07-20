@@ -84,15 +84,11 @@ export function Header() {
               <Image
                 src="/icon.png"
                 alt="Ícone Puro Charme"
-                width={40}
-                height={40}
-                style={{ objectFit: "contain" }}
+                width={60}
+                height={60}
+                style={{ objectFit: "contain", maxHeight: "60px" }}
                 priority
               />
-              <span className="hidden lg:block" style={{ fontFamily: "var(--font-serif)", fontSize: "1.1rem", fontWeight: 600, color: "var(--color-rose-taupe)", lineHeight: 1.2 }}>
-                Puro Charme<br/>
-                <span style={{ fontSize: "0.8rem", color: "var(--color-text-secondary)", fontWeight: 500, fontFamily: "var(--font-sans)" }}>Debutantes & Damas</span>
-              </span>
             </Link>
 
             {/* Navegação desktop */}

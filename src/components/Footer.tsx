@@ -36,7 +36,7 @@ export function Footer() {
         >
           {/* Coluna 1 — Marca */}
           <div>
-            <div style={{ marginBottom: "1.25rem", filter: "brightness(0) invert(1)" }}>
+            <div style={{ marginBottom: "1.25rem" }}>
               <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "0.75rem" }}>
                 <Image
                   src="/icon.png"
