@@ -71,7 +71,7 @@ export function Header() {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              height: "70px",
+              height: "90px",
             }}
           >
             {/* Logo */}
@@ -84,9 +84,9 @@ export function Header() {
               <Image
                 src="/icon.png"
                 alt="Ícone Puro Charme"
-                width={60}
-                height={60}
-                style={{ objectFit: "contain", maxHeight: "60px" }}
+                width={80}
+                height={80}
+                style={{ objectFit: "contain", maxHeight: "80px" }}
                 priority
               />
             </Link>
@@ -196,7 +196,7 @@ export function Header() {
             aria-label="Menu mobile"
             style={{
               position: "absolute",
-              top: "70px",
+              top: "90px",
               left: 0,
               right: 0,
               background: "var(--color-cream)",
